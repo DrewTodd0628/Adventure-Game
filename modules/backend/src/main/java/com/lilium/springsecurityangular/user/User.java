@@ -2,8 +2,10 @@ package com.lilium.springsecurityangular.user;
 
 import javax.persistence.*;
 
+import net.minidev.json.JSONObject;
+
 @Entity
-public class UserEntity {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -37,4 +39,10 @@ public class UserEntity {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+    }
+
 }

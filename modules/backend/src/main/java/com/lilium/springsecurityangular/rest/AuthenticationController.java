@@ -3,6 +3,7 @@ package com.lilium.springsecurityangular.rest;
 import com.lilium.springsecurityangular.dto.ResponseDTO;
 import com.lilium.springsecurityangular.dto.UserDTO;
 import com.lilium.springsecurityangular.session.SessionRegistry;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,9 +23,10 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<ResponseDTO> login(@RequestBody UserDTO user) {
+        System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" + user.getUsername()
+                + " | " + user.getPassword());
         manager.authenticate(
                 new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-
         final String sessionId = sessionRegistry.registerSession(user.getUsername());
         ResponseDTO response = new ResponseDTO();
         response.setSessionId(sessionId);

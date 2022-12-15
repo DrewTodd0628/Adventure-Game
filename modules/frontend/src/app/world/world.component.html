@@ -1,0 +1,13 @@
+<div class="world-container">
+  <div id="world">
+    <div *ngFor="let layer of layers; let level = index">
+      <div *ngFor="let strip of layer; let y = index">
+        <div *ngFor="let tile of strip; let x = index">
+          <!-- {{ tile + ", x: " + x + ", y: " + y }} -->
+          <app-tile [type]="tile" [level]="level" [x]="x" [y]="y"></app-tile>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-player></app-player>

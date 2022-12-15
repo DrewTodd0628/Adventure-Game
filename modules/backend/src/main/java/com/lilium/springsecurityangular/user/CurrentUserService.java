@@ -16,7 +16,7 @@ public class CurrentUserService implements UserDetailsService {
 
     @Override
     public CurrentUser loadUserByUsername(String username) throws UsernameNotFoundException {
-        final UserEntity user = repository.findByUsername(username);
+        final User user = repository.findByUsername(username);
         if (user != null) {
             final CurrentUser currentUser = new CurrentUser();
             currentUser.setUsername(user.getUsername());

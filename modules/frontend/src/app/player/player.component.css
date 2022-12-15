@@ -1,0 +1,15 @@
+.player-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+}
+
+.player {
+  background-color: red;
+  min-width: 32px;
+  min-height: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+}

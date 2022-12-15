@@ -10,13 +10,29 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RequestInterceptor } from './request.interceptor';
+import { WorldComponent } from './world/world.component';
+import { TileComponent } from './tile/tile.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    WorldComponent,
+    TileComponent,
+    PlayerComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
   ],

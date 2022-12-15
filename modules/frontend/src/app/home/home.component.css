@@ -1,0 +1,10 @@
+.window-game {
+  background-color: rgb(44, 255, 132);
+  /* width: 100vw; */
+  height: 100vh;
+}
+
+app-world {
+  position: absolute;
+  left: 0px;
+}
