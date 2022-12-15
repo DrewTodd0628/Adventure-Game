@@ -10,13 +10,14 @@ pipeline {
 
         stage('Publish') {
             steps {
-                // success {
-                //     archiveArtifacts 'modules/backend/build/libs/*.jar'
-                // }
-                echo "empty stage"
+                echo "Build Successful"
             }
 
             post {
+                success {
+                    archiveArtifacts 'modules/backend/build/libs/*.jar'
+                }
+
                 cleanup {
                     cleanWs disableDeferredWipeout: true, deleteDirs: true
                 }
