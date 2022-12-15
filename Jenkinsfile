@@ -7,6 +7,7 @@ pipeline {
                 bat 'gradlew modules:backend:build'
                 bat 'cd modules/frontend'
                 dir('modules/frontend') {
+                    bat 'npm install'
                 bat 'ng build'
                 }
             }
