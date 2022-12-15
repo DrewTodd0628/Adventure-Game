@@ -21,11 +21,15 @@ pipeline {
             post {
                 success {
                     archiveArtifacts 'modules/backend/build/libs/*.jar'
+                    dir('modules/frontend/dist') {
+                        bat 'jar -cfM frontend.zip frontend'
+                        archiveArtifacts 'frontend.zip'
+                    }
                 }
 
-                // cleanup {
-                //     cleanWs disableDeferredWipeout: true, deleteDirs: true
-                // }
+                cleanup {
+                    cleanWs disableDeferredWipeout: true, deleteDirs: true
+                }
             }
         }
     }
