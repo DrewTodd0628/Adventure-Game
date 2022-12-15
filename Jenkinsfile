@@ -10,9 +10,10 @@ pipeline {
 
         stage('Publish') {
             steps {
-                success {
-                    archiveArtifacts 'moduless/backend/build/libs/*.jar'
-                }
+                // success {
+                //     archiveArtifacts 'modules/backend/build/libs/*.jar'
+                // }
+                echo "empty stage"
             }
 
             post {
