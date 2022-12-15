@@ -9,6 +9,8 @@ pipeline {
         }
 
         stage('Publish') {
+            steps {
+            }
 
             post {
                 success {
