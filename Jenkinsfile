@@ -22,9 +22,9 @@ pipeline {
                     archiveArtifacts 'modules/backend/build/libs/*.jar'
                 }
 
-                cleanup {
-                    cleanWs disableDeferredWipeout: true, deleteDirs: true
-                }
+                // cleanup {
+                //     cleanWs disableDeferredWipeout: true, deleteDirs: true
+                // }
             }
         }
     }
