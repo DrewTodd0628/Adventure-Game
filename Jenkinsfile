@@ -15,11 +15,11 @@ pipeline {
                 }
             }
 
-            // post {
-            //     cleanup {
-            //         cleanWs disableDeferredWipeout: true, deleteDirs: true
-            //     }
-            // }
+            post {
+                cleanup {
+                    cleanWs disableDeferredWipeout: true, deleteDirs: true
+                }
+            }
         }
     }
 }
