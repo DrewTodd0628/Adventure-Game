@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'gradlew modules:backend:build'
+                bat 'cd modules/frontend'
+                bat 'ng build'
             }
         }
 
