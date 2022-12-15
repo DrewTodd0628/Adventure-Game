@@ -10,11 +10,8 @@ pipeline {
 
         stage('Publish') {
             steps {
-                // success {
-                //     archiveArtifacts '**/modules/backend/build/libs/*.jar'
-                // }
-                cleanup {
-                    cleanWs disableDeferredWipeout: true, deleteDirs: true
+                success {
+                    archiveArtifacts '**/modules/backend/build/libs/*.jar'
                 }
             }
 
